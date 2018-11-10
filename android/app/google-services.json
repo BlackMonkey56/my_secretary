@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "478028267943",
+    "firebase_url": "https://my-secretary-f31c5.firebaseio.com",
+    "project_id": "my-secretary-f31c5",
+    "storage_bucket": "my-secretary-f31c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478028267943:android:3e3bbc361051334e",
+        "android_client_info": {
+          "package_name": "com.wony.my_secretary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478028267943-820dhb14k1l92rfnh8bnpr7uuffc8352.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wony.my_secretary",
+            "certificate_hash": "cda7347568ebb7008ed7da792db84f26c2779c78"
+          }
+        },
+        {
+          "client_id": "478028267943-kqn1d5i31u6ql56asdmj3r9ela9iv84a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkJlaNnNyTQ1pVhlsBH8s7o0JPy40uW70"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478028267943-kqn1d5i31u6ql56asdmj3r9ela9iv84a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
