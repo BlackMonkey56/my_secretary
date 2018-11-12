@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_secretary/google_auth.dart';
-import 'package:my_secretary/facebook_auth.dart';
+import 'package:my_secretary/authentication.dart';
 
 class IntroPage extends StatefulWidget {
   @override
@@ -53,27 +52,7 @@ class _IntroPageState extends State<IntroPage> {
               new Expanded(
                 flex: 1,
                 child: new Container(
-                  child: new Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      new Text(
-                          "-  -  -  -  -  Sign with  -  -  -  -  -",
-                        style: new TextStyle(
-                          color: Colors.white,
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.bold,
-                        ),//TextStyle
-                      ),//Text
-                      new Padding(
-                        padding: EdgeInsets.only(top: 20.0),
-                      ),//Padding
-                      new MyGoogleAuth(),
-                      new Padding(
-                        padding: EdgeInsets.only(top: 10.0),
-                      ),//Padding
-                      new MyFacebookAuth(),
-                    ],//<Widget>[]
-                  ),//Column
+                  child: new Authentication(),
                 ),//Container
               ),//Expanded
             ],//<Widget>[]
