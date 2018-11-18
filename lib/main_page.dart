@@ -45,6 +45,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
               controller.fling(velocity: isPanelVisible ? -1.0 : 1.0);
             },
         ),//IconButton
+
       ),//AppBar
       body: new TodoListPanel(
           controller: controller,

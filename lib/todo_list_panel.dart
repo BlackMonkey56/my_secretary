@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_secretary/todo_list.dart';
 
 class TodoListPanel extends StatefulWidget {
 
@@ -44,7 +45,7 @@ class _TodoListPanelState extends State<TodoListPanel> {
           new PositionedTransition(
               rect: getPanelAnimation(constraints),
               child: new Material(
-                color: Colors.greenAccent,
+                color: Colors.lightBlueAccent,
                 elevation: 12.0,
                 borderRadius: new BorderRadius.only(
                   topLeft: new Radius.circular(16.0),
@@ -62,12 +63,7 @@ class _TodoListPanelState extends State<TodoListPanel> {
                       ),//Center
                     ),//Container
                     new Expanded(
-                        child: new Center(
-                          child: new Text("ToDo list here...", style: new TextStyle(
-                              fontSize: 24.0, color: Colors.black
-                            ),//TextStyle
-                          ),//Text
-                        ),//Center
+                        child: new TodoList(),
                     )//Expanded
                   ],//Widget
                 ),//Column
