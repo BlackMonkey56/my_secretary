@@ -24,6 +24,7 @@ dependencies:
   flutter_facebook_login:
   cloud_firestore:
   flutter_slidable:
+  flutter_staggered_grid_view:
 
 
 dev_dependencies:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_secretary/todo_list.dart';
+import 'package:my_secretary/main_info_board.dart';
 
 class TodoListPanel extends StatefulWidget {
 
@@ -34,13 +35,7 @@ class _TodoListPanelState extends State<TodoListPanel> {
         children: <Widget>[
           new Container(
             color: theme.primaryColor,
-            child: new Center(
-              child: new Text("Weather, Transporter info...",
-                style: new TextStyle(
-                  fontSize: 24.0, color: Colors.white,
-                ),//TextStyle
-              ),//Text
-            ),//Center
+            child: new MainInfoBoard(),
           ),//Container
           new PositionedTransition(
               rect: getPanelAnimation(constraints),

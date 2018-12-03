@@ -48,16 +48,27 @@ class _TodoListState extends State<TodoList> {
                 children: <Widget>[
                   new TextField(
                     decoration: new InputDecoration(
-                        hintText: "할 일"
+                      labelStyle: Theme.of(context).textTheme.display1,
+                      labelText: '할 일',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),//InputDecoration
                     onChanged: (value){
                       this.todoStr = value;
                     },
                     controller: todoTextController,
                   ),//TextField,
+                  new Padding(
+                    padding: EdgeInsets.all(5.0),
+                  ),//Padding
                   new TextField(
                     decoration: new InputDecoration(
-                        hintText: "옵션(장소, 시간 등)"
+                      labelStyle: Theme.of(context).textTheme.display1,
+                      labelText: '옵션(장소, 시간...)',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),//InputDecoration
                     onChanged: (value){
                       this.optionStr = value;
