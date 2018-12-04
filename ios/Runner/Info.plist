@@ -44,5 +44,9 @@
 
 	com.googleusercontent.apps.478028267943-mu9tgsk0adpfq35mb0pcuu6d12erd4lr
 
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Your location is required for Weather App</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is required for Weather App</string>
 </dict>
 </plist>
