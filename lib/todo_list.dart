@@ -3,6 +3,8 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'services/crud.dart';
 import 'dart:async';
 
+//체크리스트를 구체적으로 구현하는 코드
+
 class TodoList extends StatefulWidget {
   @override
   _TodoListState createState() => new _TodoListState();
@@ -46,6 +48,7 @@ class _TodoListState extends State<TodoList> {
               ),//EdgeInsets.only
               child: new Column(
                 children: <Widget>[
+                  // 입력부분
                   new TextField(
                     decoration: new InputDecoration(
                       labelStyle: Theme.of(context).textTheme.display1,
@@ -69,25 +72,26 @@ class _TodoListState extends State<TodoList> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                    ),//InputDecoration
+                    ),
                     onChanged: (value){
                       this.optionStr = value;
                     },
                     controller: optionTextController,
-                  ),//TextField,
+                  ),
                   new Padding(
                     padding: EdgeInsets.all(5.0),
                   ),//Padding
+                  //등록 버튼
                   new RaisedButton(
                     child: new Text(
                       '등 록',
                       style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          fontWeight: FontWeight.w800,
+                          color: Color.fromRGBO(232,180,70,1.0),
                           fontSize: 18.0,
-                      ),//TextStyle
-                    ),//Text
-                    color: Colors.redAccent,
+                      ),
+                    ),
+                    color: Color.fromRGBO(25,45,62,1.0),
                     onPressed: () {
                       if(todoTextController.text.isNotEmpty){
                         Map<String, dynamic> todoData = {
@@ -104,6 +108,8 @@ class _TodoListState extends State<TodoList> {
                           });
 
                           //등록 완료된 후에 TextField 초기화
+                          this.todoStr = "";
+                          this.optionStr = "";
                           todoTextController.text = "";
                           optionTextController.text = "";
                         }).catchError((e){
@@ -116,6 +122,8 @@ class _TodoListState extends State<TodoList> {
               ),//Column
             ),//Padding
           ),//Expanded
+          //작성된 리스트를 보여주기 위해 리스트 항목들을 각각 만들어내는 부분
+          //구글의 firebase로 부터 읽어 들인 데이터들을 기반으로 리스트 항목을 구성함
           new Expanded(
             flex: 3,
             child: new StreamBuilder(
@@ -134,7 +142,8 @@ class _TodoListState extends State<TodoList> {
                             snapshot.data.documents[i].data['todo'],
                             style: TextStyle(
                               color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 20.0
                             ),
                           ),
                           subtitle: Text(
@@ -142,6 +151,7 @@ class _TodoListState extends State<TodoList> {
                             style: TextStyle(
                               color: Colors.white,
                               fontStyle: FontStyle.italic,
+                              fontSize: 12.0
                             ),
                           ),
                           leading: new Checkbox(
@@ -153,9 +163,11 @@ class _TodoListState extends State<TodoList> {
                               });
                             },
                             value: snapshot.data.documents[i].data['isComplete'],
+                            activeColor: Color.fromRGBO(220,95,70,1.0),
                           ),
                         ),//ListTile
                       ),//Container
+                      //리스트 항목을 왼쪽으로 슬라이드 했을 때 항목 삭제 버튼을 구성
                       secondaryActions: <Widget>[
                         new IconSlideAction(
                           caption: 'Delete',
@@ -186,19 +198,19 @@ Future<bool> deleteDialog(BuildContext context){
     barrierDismissible: false,
     builder: (BuildContext context) {
       return new AlertDialog(
-        title: new Text("Do you want to delete?"),
+        title: new Text("항목을 삭제 하시겠습니까?"),
         actions: <Widget>[
           new FlatButton(
             onPressed: () {
               Navigator.of(context).pop(true);
             },
-            child: new Text("Yes"),
+            child: new Text("네"),
           ),//FlatButton
           new FlatButton(
             onPressed: () {
               Navigator.of(context).pop(false);
             },
-            child: new Text("No"),
+            child: new Text("아니요"),
           ),//FlatButton
         ],
       );//AlertDialog

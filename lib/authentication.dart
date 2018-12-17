@@ -27,14 +27,15 @@ class _AuthenticationState extends State<Authentication> {
           new Text(
             "-  -  -  -  -  Sign with  -  -  -  -  -",
             style: new TextStyle(
-              color: Colors.white,
-              fontSize: 13.0,
+              color: Colors.redAccent[400],
+              fontSize: 15.0,
               fontWeight: FontWeight.bold,
             ),//TextStyle
           ),//Text
           new Padding(
             padding: EdgeInsets.only(top: 20.0),
           ),//Padding
+          //구글인증하기
           new MaterialButton(//Google Auth Button
             height: 50.0,
             minWidth: 180.0,
@@ -73,6 +74,7 @@ class _AuthenticationState extends State<Authentication> {
           new Padding(
             padding: EdgeInsets.only(top: 10.0),
           ),//Padding
+          //페이스북 인증하기
           new MaterialButton(
             height: 50.0,
             minWidth: 180.0,

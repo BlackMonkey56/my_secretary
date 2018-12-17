@@ -1,3 +1,5 @@
+
+
 class Coord {
   final double lon;
   final double lat;
@@ -10,7 +12,6 @@ class Coord {
         lat: double.parse(json['lat'].toString())
     );
   }
-
 }
 
 class Weather {

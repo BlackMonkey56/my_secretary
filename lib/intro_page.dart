@@ -14,7 +14,7 @@ class _IntroPageState extends State<IntroPage> {
         fit: StackFit.expand,
         children: <Widget>[
           new Container(
-            decoration: BoxDecoration(color: Colors.deepOrange),
+            decoration: BoxDecoration(color: Color.fromRGBO(25,44,60,1.0)),
           ),//Container
           new Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -25,22 +25,23 @@ class _IntroPageState extends State<IntroPage> {
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      //상위 앱의 아이콘과 타이틀을 표기한 부분
                       new CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 70.0,
                         child: new Icon(
                           Icons.directions_run,
-                          color: Colors.redAccent,
+                          color: Color.fromRGBO(25,44,60,1.0),
                           size: 90.0,
                         ),//Icon
                       ),//CircleAvatar
                       new Padding(
                           padding: EdgeInsets.only(top: 10.0)
-                      ),//Padding
+                      ),
                       new Text(
                         "My Secretary",
                         style: new TextStyle(
-                          color: Colors.white,
+                          color: Colors.redAccent[400],
                           fontSize: 40.0,
                           fontWeight: FontWeight.bold
                         ),//TextStyle
@@ -49,6 +50,7 @@ class _IntroPageState extends State<IntroPage> {
                   ),//Column
                 ),//Container
               ),//Expanded
+              //구글과 페이스북 인증을 실행하기 위해 인증 구현 코드를 호출
               new Expanded(
                 flex: 1,
                 child: new Container(

@@ -33,21 +33,19 @@ class _TodoListPanelState extends State<TodoListPanel> {
     return new Container(
       child: new Stack(
         children: <Widget>[
+          //뒷 패널 부분(날씨정보 안내)을 구성하는 부분
           new Container(
-            color: theme.primaryColor,
+            color: Color.fromRGBO(25,44,60,1.0),
             child: new Center(
-//              child: new Text("Weather, Transporter info...",
-//                style: new TextStyle(
-//                  fontSize: 24.0, color: Colors.white,
-//                ),//TextStyle
-//              ),//Text
                 child: new WeatherInfoBoard(),
-            ),//Center
-          ),//Container
+            ),
+          ),
+          //앞 패널 부분을 구성하는 부분(하단 아래쪽에 숨겨져 있으며 상단 바의 리스트 아이콘을 클릭 시 패널이 올라옴)
+          //체크리스트
           new PositionedTransition(
               rect: getPanelAnimation(constraints),
               child: new Material(
-                color: Colors.lightBlueAccent,
+                color: Color.fromRGBO(59,134,131,1.0),
                 elevation: 12.0,
                 borderRadius: new BorderRadius.only(
                   topLeft: new Radius.circular(16.0),
@@ -59,21 +57,21 @@ class _TodoListPanelState extends State<TodoListPanel> {
                       height: header_height,
                       child: new Center(
                         child: new Text("To Do List", style: new TextStyle(
-                            fontSize: 15.0, fontWeight: FontWeight.bold
-                          ),//TextStyle
-                        ),//Text
-                      ),//Center
-                    ),//Container
+                            fontSize: 18.0, fontWeight: FontWeight.w900, color: Color.fromRGBO(232,181,79,1.0)
+                          ),
+                        ),
+                      ),
+                    ),
                     new Expanded(
                         child: new TodoList(),
-                    )//Expanded
-                  ],//Widget
-                ),//Column
-              ),//Material
-          ),//PositionedTransition
-        ],//<Widget>[]
-      ),//Stack
-    );//Container
+                    )
+                  ],
+                ),
+              ),
+          ),
+        ],
+      ),
+    );
   }
 
   @override

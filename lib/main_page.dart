@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:my_secretary/todo_list_panel.dart';
 
+//구글 혹은 페이스북 인증 후 불러오는 페이지
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => new _MainPageState();
@@ -33,9 +34,11 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      //앱 상단바
       appBar: new AppBar(
-        title: new Text("MainPage"),
+        title: new Text("My Secretary", style: new TextStyle(color: Colors.redAccent[400]),),
         elevation: 0.0,
+        backgroundColor: Color.fromRGBO(25,44,60,1.0),
         leading: new IconButton(
             icon: new AnimatedIcon(
                 icon: AnimatedIcons.view_list,
@@ -46,6 +49,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
             },
         ),//IconButton
       ),//AppBar
+      //해당 페이지의 구체적인 내용을 구성하는 코드 호출
       body: new TodoListPanel(
           controller: controller,
       ),//TodoListPanel
